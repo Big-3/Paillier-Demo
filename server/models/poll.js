@@ -7,7 +7,7 @@ class Poll{
         this.pollName = pollName;
         this.options = options;
         this.privateKey = privateKey;
-        this.result = 1n;
+        this.result = this.privateKey.getPubKey().encrypt(0n);
     }
 
     static async init() {
