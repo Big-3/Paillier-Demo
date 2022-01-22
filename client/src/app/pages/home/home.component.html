@@ -1,0 +1,11 @@
+<h1>Demo Paillier</h1>
+<div *ngIf="isLoaded">
+    <h2>{{poll.pollName}}</h2>
+    <br>
+    <form [formGroup]='form'>
+        <label *ngFor="let option of poll.options">
+            <input type="radio" value="{{option.value}}" formControlName="opt"><span>{{option.optionName}}</span><br>
+        </label><br>
+        <button type="button" (click)="vote()">Vote!</button>
+    </form>
+</div>
